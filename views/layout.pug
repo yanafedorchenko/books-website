@@ -1,0 +1,29 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        block title
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css")
+        link(rel="stylesheet" href="css/bootstrap.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+        script(src="js/covers.js" type="text/javascript")
+        block scripts
+    body
+        div(class="container w-75")
+            nav(class="navbar navbar-expand-lg bg-white navbar-light mt-3 mb-5" style="font-size: 1.5em")
+                a(class="navbar-brand" href="" style="font-size: 1.1em") Books
+                button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                    span(class="navbar-toggler-icon")
+                div(class="collapse navbar-collapse" id="navbarSupportedContent")
+                    ul(class="navbar-nav mr-auto" id="nav_list")
+                        li(class="nav-item mx-3")
+                            a(class="nav-link" href="/search") Search
+                        li(class="nav-item mx-3" id="login_navbar" )
+                            a(class="nav-link" href="/login") Login
+                        li(class="nav-item mx-3" id="register_navbar")
+                            a(class="nav-link" href="/") Register
+                        li(class="nav-item mx-3")
+                            a(class="nav-link" href="/logout") Logout
+            block content

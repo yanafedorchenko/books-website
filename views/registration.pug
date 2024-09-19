@@ -1,0 +1,42 @@
+extends layout.pug
+
+block scripts
+    script(src="js/password.js" type="text/javascript")
+
+block title
+    title SignUp
+
+block content
+    div(class="rows")
+        div(class="col-lg-8 mx-auto mt-5")
+            h1 Welcome to our Book Club! 
+            h4 Please sign up to have full access to our books
+    
+    div(class="rows")
+        div(class="col-lg-7 mx-auto mt-5")
+            form(action="/", method="post")
+                div(class="form-group row")
+                    label(for="name" class="col-md-3 col-form-label") Full name:
+                    div(class="col-md-9")
+                        input(class="form-control" type="name" name="name" placeholder="Jane Doe")
+                div(class="form-group row")
+                    label(for="username" class="col-md-3 col-form-label") Username:
+                    div(class="col-md-9")
+                        input(class="form-control" type="name" name="username" placeholder="abc123")
+                div(class="form-group row")
+                    label(for="email" class="col-md-3 col-form-label") E-Mail:
+                    div(class="col-md-9")
+                        input(class="form-control" type="email" name="email" placeholder="email@address.com")
+                div(class="form-group row") 
+                    label(for="password" class="col-md-3 col-form-label") Password:
+                    div(class="col-md-9")
+                        input(class="form-control" type="password" name="password" placeholder="Password" id="password_input")
+                div(class="form-group") 
+                    button(type="submit" id="sign_up_button" class="btn btn-primary" disabled) SignUp
+                p  
+                | I already have an account. 
+                a(href="/login") Log in now
+                ul(class="list-group-flush mt-3 mx-auto" style="width: 400px" id="password_requirements") 
+                
+                if error
+                    div(class="alert alert-danger" role="alert") #{error}

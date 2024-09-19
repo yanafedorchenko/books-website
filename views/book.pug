@@ -1,0 +1,38 @@
+extend layout.pug 
+
+block title
+    title #{book.title}
+
+block content
+    h1(class="book_title") #{book.title}
+    h2 Rating: #{rating}
+    h2 #{book.author}
+    h2 #{book.year}
+    
+    form(id="add_note_form" action="/book/"+bookISBN method="post")
+        div(class="form-group")
+            label(for="select_rating") Rate this book:
+            select(class="form-control" id="select_rating" name="new_rating")
+                option 1
+                option 2
+                option 3
+                option 4
+                option 5
+            label(for="review") Review:
+            textarea(class="form-control" id="review" name="new_review")
+        div(class="form-group")
+            button(class="btn btn-primary") Send
+            
+    if second_review
+        div(class="alert alert-danger" id="reviewsquantity" role="alert") #{second_review}
+        
+        
+    div(class="list-group")
+        each review in reviews
+            div(href="#" class="list-group-item flex-column align-items-start")
+                div(class="d-flex w-100 justify-content-between") #{review.username}:
+                p(class="mb-1") #{review.review}
+        else
+            li(class="list-group-item") There are no reviews to this book yet
+
+    

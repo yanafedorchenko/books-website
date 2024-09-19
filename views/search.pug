@@ -1,0 +1,25 @@
+extends layout.pug
+
+block title
+    title Search
+    
+block scripts
+    script(src="js/ajaxsearch.js" type="text/javascript")
+
+block content
+    div(class="mx-auto w-75")
+    
+        h1(class="my-5") Book search
+
+        h4 Title
+        form(action="/search" method="post" id="search_form")
+            div(class="form-group row")
+                input(type="text" name="book_search" class="form-control col-9" id="search_input_field")
+                div(class="col-3")    
+                    button(type="submit" class="btn btn-primary") Search
+            ul(class="list-group" id="search_results") 
+                
+        
+            
+        if search_error
+            div(class="alert alert-danger" role="alert") #{search_error}
